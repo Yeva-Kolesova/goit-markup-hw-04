@@ -1,4 +1,8 @@
-/* Core styles */
+/**
+  |============================
+  | Core styles
+  |============================
+*/
 
 :root {
     /* text style varibles */
@@ -12,6 +16,7 @@
     /* active state style variables */
     --accent-color: #404BBF;
     --accent-pressed-state: #4D5AE5;
+    --active-socials:#31D0AA;
 
     /* background style variables */
     --white-background: #fff;
@@ -27,7 +32,11 @@
     --indent-row: 0px;
 }
 
-/* Reset  */
+/**
+  |============================
+  |  Reset
+  |============================
+*/
 
 a {
     font-style: normal;
@@ -76,7 +85,12 @@ img {
 }
 
 
-/* Layouts */
+
+/**
+  |============================
+  | Layouts
+  |============================
+*/
 
 .container {
     width: 78%;
@@ -93,7 +107,12 @@ img {
     padding: 120px 0;
 }
 
-/* Fonts */
+
+/**
+  |============================
+  | Fonts
+  |============================
+*/
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -133,7 +152,11 @@ body {
     color: var(--title-text-color);
 }
 
-/* Card set  */
+/**
+  |============================
+  | Card set
+  |============================
+*/
 
 .card-set {
     gap: var(--indent-row) var(--indent-col);
@@ -145,7 +168,11 @@ body {
     flex-basis: calc((100% - var(--indent-col) * (var(--items) - 1)) / var(--items));
 }
 
-/* Header styles */
+/**
+  |============================
+  | Header styles
+  |============================
+*/
 
 .header-wrapper {
     border-bottom: 1px solid #E7E9FC;
@@ -181,7 +208,11 @@ body {
 }
 
 
-/* Navigation */
+/**
+  |============================
+  | Navigation
+  |============================
+*/
 
 .nav-wrapper {
     align-items: center;
@@ -191,10 +222,47 @@ body {
     gap: 40px;
 }
 
-.nav-list .nav-link {
+/* Noraml state */
+
+/* .nav-list .nav-link {
+    position: relative;
+
     display: block;
     color: var(--title-text-color);
     padding: 24px 0;
+} */
+
+
+/* чому .nav-list додає горизонтальний скролл */
+
+.nav-link {
+    position: relative;
+
+    display: block;
+    color: var(--title-text-color);
+    padding: 24px 0;
+}
+
+/* Active state */
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.nav-link.current::after,
+.nav-link:active::after{
+    background-color: var(--accent-color);
+}
+
+.nav-link.current{
+    color: var(--accent-color);
 }
 
 .nav-list .nav-link,
@@ -218,12 +286,24 @@ body {
 }
 
 
-/* Hero section  */
+/**
+  |============================
+  | Hero section
+  |============================
+*/
 
 .hero-wrapper {
     display: block;
     min-height: 600px;
     background-color: var(--hero-background);
+
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)), 
+        url('../images/main-page/backgrounds/hero-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .hero-wrapper{
@@ -276,8 +356,12 @@ body {
     background-color: var(--accent-background-color);
 }
 
+/**
+  |============================
+  |  Benefits section
+  |============================
+*/
 
-/* Benefits section  */
 .benefits-list {
     --items: 4;
     --indent-row: 24px;
@@ -288,7 +372,28 @@ body {
     margin-bottom: 8px;
 }
 
-/* Skills section  */
+.benefits-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 264px;
+    height: 112px;
+    background: var(--light-background-color);
+    border-radius: 4px;
+
+    margin-bottom: 8px;
+}
+
+.benefits-icon{
+}
+
+
+/**
+  |============================
+  | Skills section
+  |============================
+*/
 
 .skills-list {
     --items: 3;
@@ -296,8 +401,11 @@ body {
     --indent-col: 24px;
 }
 
-
-/* Teammates section  */
+/**
+  |============================
+  | Teammates section
+  |============================
+*/
 
 .teammate-wrapper {
     background-color: var(--light-background-color);
@@ -318,7 +426,7 @@ body {
 
 
 .teammate-text-container {
-    padding: 32px 0;
+    padding: 32px 0 8px;
     text-align: center;
 }
 
@@ -326,12 +434,105 @@ body {
     margin-bottom: 8px;
 }
 
-/* Footer section  */
+.teammate-socials-container{
+    padding:0 16px 32px;
+}
+
+
+/**
+  |============================
+  | Socials style
+  |============================
+*/
+
+.teammate-wrapper .socials-list{
+    gap:24px;
+    justify-content: center;
+}
+
+
+.socials-item{
+    width: 40px;
+    height: 40px;
+}
+
+.socials-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    color: var(--light-text);
+    background-color: var(--accent-pressed-state);
+    border-radius: 50%;
+
+
+    padding: 16px 0;
+}
+
+.socials-icon {
+    fill: currentColor;
+}
+
+
+.socials-link:hover,
+.socials-link:focus {
+    background-color: var(--active-socials);
+}
+
+
+/**
+  |============================
+  | Customers section
+  |============================
+*/
+
+.customers-list{
+    --items: 6;
+    --indent-row: 24px;
+    --indent-col: 24px;
+}
+
+.customers-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:100%;
+
+    color: #8E8F99;;
+    border-radius: 4px;
+    border: 1px solid #8E8F99;
+
+    padding: 16px 0;
+}
+
+.customers-icon{
+    fill: currentColor;
+}
+
+
+.customers-link:hover,
+.customers-link:focus{
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+/**
+  |============================
+  | Footer section
+  |============================
+*/
 
 .footer-wrapper {
     color: var(--light-text);
     background-color: var(--dark-color);
     padding: 100px 0;
+}
+
+.footer-wrapper .container{
+    gap:120px;
 }
 
 .footer-wrapper .logo {
@@ -355,8 +556,22 @@ body {
     max-width: 264px
 }
 
+.footer-wrapper .socials-list {
+    gap: 16px;
+    justify-content: center;
+}
 
-/* Portfolio page  */
+
+.footer-center-container .section-text{
+    margin-bottom: 16px;
+}
+
+
+/**
+  |============================
+  | Portfolio page
+  |============================
+*/
 
 
 /* filter button  */
@@ -418,4 +633,82 @@ body {
 
 .portfolio-text-container .item-heading {
     margin-bottom: 8px;
+}
+
+
+
+/**
+  |============================
+  | Modal window
+  |============================
+*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--idx-modal);
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+
+  transition: opacity 200ms linear, visibility 200ms linear;
+  transition-delay: 0s;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition-delay: 200ms;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translateX(-50%) translateY(-50%) scale(1); */
+  transform: translateX(-50%) translateY(-50%);
+  width: 517px;
+  min-height: 794px;
+
+  border-radius: 15px;
+  background-color: #fafafa;
+
+  opacity: 1;
+
+  transition: transform 300ms cubic-bezier(0.59, -0.21, 0, 1.48) 200ms,
+    opacity 300ms cubic-bezier(0.59, -0.21, 0, 1.48) 200ms;
+}
+
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  /* transform: translateX(-50%) translateY(-70%) scale(0.4); */
+  transform: translateX(-50%) translateY(-70%);
+  transition-delay: 0s;
+}
+
+.modal-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--main-cl);
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: color var(--trns-fast);
+}
+.modal-btn:hover,
+.modal-btn:focus {
+  color: var(--accent-cl);
+}
+.modal-btn-icon {
+  stroke: currentColor;
 }
