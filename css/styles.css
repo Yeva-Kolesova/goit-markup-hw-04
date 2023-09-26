@@ -499,6 +499,11 @@ body {
     --indent-col: 24px;
 }
 
+.customers-item{
+    width: 168px;
+    height: 88px;
+}
+
 .customers-link{
     display: flex;
     align-items: center;
