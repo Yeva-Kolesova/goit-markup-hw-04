@@ -301,6 +301,7 @@ body {
 
 .hero-wrapper {
     display: block;
+    max-width: 1440px;
     min-height: 600px;
     background-color: var(--hero-background);
 
@@ -311,6 +312,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin: 0 auto;
 }
 
 .hero-wrapper{
