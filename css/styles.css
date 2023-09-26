@@ -537,7 +537,7 @@ body {
 }
 
 .footer-wrapper .container{
-    gap:120px;
+    align-items: baseline;
 }
 
 .footer-wrapper .logo {
@@ -548,8 +548,9 @@ body {
     color: var(--light-text);
 }
 
-.footer-text-container {
+.footer-left-container {
     max-width: 264px;
+    margin-right: 120px
 }
 
 .footer-wrapper .logo{
@@ -561,11 +562,22 @@ body {
     max-width: 264px
 }
 
+.footer-subject{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
 .footer-wrapper .socials-list {
     gap: 16px;
     justify-content: center;
 }
 
+.footer-center-container .socials-item{
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .footer-center-container .section-text{
     margin-bottom: 16px;
