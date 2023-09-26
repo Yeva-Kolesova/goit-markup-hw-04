@@ -439,13 +439,10 @@ body {
     text-align: center;
 }
 
-.teammate-text-container .item-heading {
+.teammate-text-container .section-text {
     margin-bottom: 8px;
 }
 
-.teammate-socials-container{
-    padding:0 16px 32px;
-}
 
 
 /**
@@ -484,10 +481,9 @@ body {
     fill: currentColor;
 }
 
-
 .socials-link:hover,
 .socials-link:focus {
-    background-color: var(--active-socials);
+    background-color: var(--accent-background-color);
 }
 
 
@@ -588,6 +584,11 @@ body {
 
 .footer-center-container .socials-link{
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-wrapper .socials-link:hover,
+.footer-wrapper .socials-link:focus {
+    background-color: var(--active-socials);
 }
 
 .footer-center-container .section-text{
